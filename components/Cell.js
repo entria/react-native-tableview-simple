@@ -3,13 +3,7 @@ import React from 'react';
 
 import PropTypes from 'prop-types';
 
-import {
-  StyleSheet,
-  Text,
-  TouchableHighlight,
-  View,
-  ViewPropTypes,
-} from 'react-native';
+import { StyleSheet, Text, TouchableHighlight, View, ViewPropTypes } from 'react-native';
 
 const Cell = props => {
   const {
@@ -58,32 +52,15 @@ const Cell = props => {
     cell_title: isDisabled
       ? [styles.cell_title, styles.cell_text__disabled, titleTextStyleDisabled]
       : [styles.cell_title, { color: titleTextColor }, titleTextStyle],
-    cell_leftDetail: [
-      styles.cell_leftDetail,
-      { color: leftDetailColor },
-      detailTextStyle,
-    ],
+    cell_leftDetail: [styles.cell_leftDetail, { color: leftDetailColor }, detailTextStyle],
     cell_leftDetailTitle: isDisabled
       ? [styles.cell_leftDetailTitle, styles.cell_text__disabled]
       : [styles.cell_leftDetailTitle, { color: titleTextColor }],
-    cell_rightDetail: [
-      styles.cell_rightDetail,
-      { color: rightDetailColor },
-      detailTextStyle,
-    ],
+    cell_rightDetail: [styles.cell_rightDetail, { color: rightDetailColor }, detailTextStyle],
 
-    accessory_checkmark: [
-      styles.accessory_checkmark,
-      { borderColor: accessoryColor },
-    ],
-    accessory_detail: [
-      styles.accessory_detail,
-      { borderColor: accessoryColor },
-    ],
-    accessory_detailText: [
-      styles.accessory_detailText,
-      { color: accessoryColor },
-    ],
+    accessory_checkmark: [styles.accessory_checkmark, { borderColor: accessoryColor }],
+    accessory_detail: [styles.accessory_detail, { borderColor: accessoryColor }],
+    accessory_detailText: [styles.accessory_detailText, { color: accessoryColor }],
   };
 
   /**
@@ -136,9 +113,7 @@ const Cell = props => {
   const renderImageView = () => {
     if (!image) return null;
     const propsToAdd = {
-      style: disableImageResize
-        ? image.props.style
-        : [image.props.style, _styles.image],
+      style: disableImageResize ? image.props.style : [image.props.style, _styles.image],
     };
     return (
       <View style={_styles.cellImageView}>
@@ -153,11 +128,7 @@ const Cell = props => {
     */
   const renderCellBasic = () =>
     <View style={_styles.cellContentView}>
-      <Text
-        allowFontScaling={allowFontScaling}
-        numberOfLines={1}
-        style={_styles.cell_title}
-      >
+      <Text allowFontScaling={allowFontScaling} numberOfLines={1} style={_styles.cell_title}>
         {title}
       </Text>
     </View>;
@@ -168,11 +139,7 @@ const Cell = props => {
    */
   const renderCellRightDetail = () =>
     <View style={_styles.cellContentView}>
-      <Text
-        allowFontScaling={allowFontScaling}
-        numberOfLines={1}
-        style={_styles.cell_title}
-      >
+      <Text allowFontScaling={allowFontScaling} numberOfLines={1} style={_styles.cell_title}>
         {title}
       </Text>
       <Text
@@ -219,15 +186,9 @@ const Cell = props => {
     * @return {View} View with View, Text, Text and Accessory
     */
   const renderCellSubtitle = () =>
-    <View
-      style={[_styles.cellContentView, _styles.cellContentView__type_subtitle]}
-    >
+    <View style={[_styles.cellContentView, _styles.cellContentView__type_subtitle]}>
       <View style={_styles.cellinner__subtitle}>
-        <Text
-          allowFontScaling={allowFontScaling}
-          numberOfLines={1}
-          style={_styles.cell_title}
-        >
+        <Text allowFontScaling={allowFontScaling} numberOfLines={1} style={_styles.cell_title}>
           {title}
         </Text>
         <Text
@@ -399,64 +360,64 @@ const styles = StyleSheet.create({
   },
 });
 
-Cell.propTypes = {
-  accessory: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
-  accessoryColor: PropTypes.string.isRequired,
-  allowFontScaling: PropTypes.bool,
-  cellStyle: PropTypes.string,
-  cellContentView: PropTypes.element,
-  cellImageView: PropTypes.element,
-  cellAccessoryView: PropTypes.element,
-  contentContainerStyle: ViewPropTypes.style,
-  backgroundColor: PropTypes.string.isRequired,
-  detail: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  detailTextStyle: Text.propTypes.style,
-  disableImageResize: PropTypes.bool,
-  highlightActiveOpacity: PropTypes.number,
-  highlightUnderlayColor: PropTypes.string,
-  image: PropTypes.element,
-  isDisabled: PropTypes.bool,
-  leftDetailColor: PropTypes.string,
-  onHighlightRow: PropTypes.func,
-  onUnHighlightRow: PropTypes.func,
-  rightDetailColor: PropTypes.string,
-  title: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.number,
-    PropTypes.element,
-  ]),
-  titleTextColor: PropTypes.string,
-  titleTextStyle: Text.propTypes.style,
-  titleTextStyleDisabled: Text.propTypes.style,
-  onPress: PropTypes.oneOfType([PropTypes.bool, PropTypes.func]),
-};
-
-Cell.defaultProps = {
-  accessory: false,
-  accessoryColor: '#007AFF',
-  allowFontScaling: true,
-  cellStyle: 'Basic',
-  cellContentView: null,
-  cellImageView: null,
-  cellAccessoryView: null,
-  contentContainerStyle: {},
-  backgroundColor: '#FFF',
-  detail: '',
-  detailTextStyle: {},
-  disableImageResize: false,
-  highlightActiveOpacity: 0.8,
-  highlightUnderlayColor: 'black',
-  image: null,
-  isDisabled: false,
-  leftDetailColor: '#007AFF',
-  onHighlightRow: null,
-  onUnHighlightRow: null,
-  onPress: false,
-  rightDetailColor: '#8E8E93',
-  title: '',
-  titleTextColor: '#000',
-  titleTextStyle: {},
-  titleTextStyleDisabled: {},
-};
+// Cell.propTypes = {
+//   accessory: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
+//   accessoryColor: PropTypes.string.isRequired,
+//   allowFontScaling: PropTypes.bool,
+//   cellStyle: PropTypes.string,
+//   cellContentView: PropTypes.element,
+//   cellImageView: PropTypes.element,
+//   cellAccessoryView: PropTypes.element,
+//   contentContainerStyle: ViewPropTypes.style,
+//   backgroundColor: PropTypes.string.isRequired,
+//   detail: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+//   detailTextStyle: Text.propTypes.style,
+//   disableImageResize: PropTypes.bool,
+//   highlightActiveOpacity: PropTypes.number,
+//   highlightUnderlayColor: PropTypes.string,
+//   image: PropTypes.element,
+//   isDisabled: PropTypes.bool,
+//   leftDetailColor: PropTypes.string,
+//   onHighlightRow: PropTypes.func,
+//   onUnHighlightRow: PropTypes.func,
+//   rightDetailColor: PropTypes.string,
+//   title: PropTypes.oneOfType([
+//     PropTypes.string,
+//     PropTypes.number,
+//     PropTypes.element,
+//   ]),
+//   titleTextColor: PropTypes.string,
+//   titleTextStyle: Text.propTypes.style,
+//   titleTextStyleDisabled: Text.propTypes.style,
+//   onPress: PropTypes.oneOfType([PropTypes.bool, PropTypes.func]),
+// };
+//
+// Cell.defaultProps = {
+//   accessory: false,
+//   accessoryColor: '#007AFF',
+//   allowFontScaling: true,
+//   cellStyle: 'Basic',
+//   cellContentView: null,
+//   cellImageView: null,
+//   cellAccessoryView: null,
+//   contentContainerStyle: {},
+//   backgroundColor: '#FFF',
+//   detail: '',
+//   detailTextStyle: {},
+//   disableImageResize: false,
+//   highlightActiveOpacity: 0.8,
+//   highlightUnderlayColor: 'black',
+//   image: null,
+//   isDisabled: false,
+//   leftDetailColor: '#007AFF',
+//   onHighlightRow: null,
+//   onUnHighlightRow: null,
+//   onPress: false,
+//   rightDetailColor: '#8E8E93',
+//   title: '',
+//   titleTextColor: '#000',
+//   titleTextStyle: {},
+//   titleTextStyleDisabled: {},
+// };
 
 export default Cell;

@@ -6,9 +6,7 @@ import PropTypes from 'prop-types';
 import { StyleSheet, TouchableHighlight, View } from 'react-native';
 
 const CustomCell = props => {
-  console.warn(
-    '`CustomCell` is deprecated. Use `<Cell cellContentView={} />` instead.'
-  );
+  console.warn('`CustomCell` is deprecated. Use `<Cell cellContentView={} />` instead.');
   const {
     children,
     contentContainerStyle,
@@ -58,28 +56,28 @@ const styles = StyleSheet.create({
   },
 });
 
-CustomCell.propTypes = {
-  children: PropTypes.oneOfType([
-    PropTypes.arrayOf(PropTypes.element),
-    PropTypes.element,
-  ]).isRequired,
-  contentContainerStyle: View.propTypes.style,
-  highlightActiveOpacity: PropTypes.number,
-  highlightUnderlayColor: PropTypes.string,
-  isDisabled: PropTypes.bool,
-  onPress: PropTypes.oneOfType([PropTypes.bool, PropTypes.func]),
-  onHighlightRow: PropTypes.func,
-  onUnHighlightRow: PropTypes.func,
-};
-
-CustomCell.defaultProps = {
-  contentContainerStyle: {},
-  highlightActiveOpacity: 0.8,
-  highlightUnderlayColor: 'black',
-  isDisabled: false,
-  onPress: null,
-  onHighlightRow: null,
-  onUnHighlightRow: null,
-};
+// CustomCell.propTypes = {
+//   children: PropTypes.oneOfType([
+//     PropTypes.arrayOf(PropTypes.element),
+//     PropTypes.element,
+//   ]).isRequired,
+//   contentContainerStyle: View.propTypes.style,
+//   highlightActiveOpacity: PropTypes.number,
+//   highlightUnderlayColor: PropTypes.string,
+//   isDisabled: PropTypes.bool,
+//   onPress: PropTypes.oneOfType([PropTypes.bool, PropTypes.func]),
+//   onHighlightRow: PropTypes.func,
+//   onUnHighlightRow: PropTypes.func,
+// };
+//
+// CustomCell.defaultProps = {
+//   contentContainerStyle: {},
+//   highlightActiveOpacity: 0.8,
+//   highlightUnderlayColor: 'black',
+//   isDisabled: false,
+//   onPress: null,
+//   onHighlightRow: null,
+//   onUnHighlightRow: null,
+// };
 
 export default CustomCell;

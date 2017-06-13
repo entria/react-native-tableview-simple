@@ -13,10 +13,8 @@ class Section extends Component {
     };
 
     this.handleHighlightRow = index =>
-      !this.state.highlightedRowIndex &&
-      this.setState({ highlightedRowIndex: index });
-    this.handleUnHighlightRow = () =>
-      this.setState({ highlightedRowIndex: undefined });
+      !this.state.highlightedRowIndex && this.setState({ highlightedRowIndex: index });
+    this.handleUnHighlightRow = () => this.setState({ highlightedRowIndex: undefined });
   }
   render() {
     const {
@@ -43,14 +41,8 @@ class Section extends Component {
     const _styles = {
       ...styles,
       section: [styles.section, { backgroundColor: sectionTintColor }],
-      sectionheader__text: [
-        styles.sectionheader__text,
-        { color: headerTextColor },
-      ],
-      sectionfooter__text: [
-        styles.sectionfooter__text,
-        { color: footerTextColor },
-      ],
+      sectionheader__text: [styles.sectionheader__text, { color: headerTextColor }],
+      sectionfooter__text: [styles.sectionfooter__text, { color: footerTextColor }],
       separator_inner: [
         styles.separator_inner,
         {
@@ -113,8 +105,8 @@ class Section extends Component {
         };
       }
 
-      const invisibleSeparator = this.state.highlightedRowIndex === index ||
-        this.state.highlightedRowIndex === index + 1;
+      const invisibleSeparator =
+        this.state.highlightedRowIndex === index || this.state.highlightedRowIndex === index + 1;
 
       if (invisibleSeparator) {
         _localstyles = {
@@ -146,10 +138,7 @@ class Section extends Component {
       if (header) {
         return (
           <View style={styles.sectionheader}>
-            <Text
-              allowFontScaling={allowFontScaling}
-              style={_styles.sectionheader__text}
-            >
+            <Text allowFontScaling={allowFontScaling} style={_styles.sectionheader__text}>
               {header}
             </Text>
           </View>
@@ -166,10 +155,7 @@ class Section extends Component {
       if (footer) {
         return (
           <View style={styles.sectionfooter}>
-            <Text
-              allowFontScaling={allowFontScaling}
-              style={_styles.sectionfooter__text}
-            >
+            <Text allowFontScaling={allowFontScaling} style={_styles.sectionfooter__text}>
               {footer}
             </Text>
           </View>
@@ -222,36 +208,36 @@ const styles = StyleSheet.create({
   },
 });
 
-Section.propTypes = {
-  allowFontScaling: PropTypes.bool,
-  children: PropTypes.node,
-  footerComponent: PropTypes.element,
-  headerComponent: PropTypes.element,
-  footer: PropTypes.string,
-  footerTextColor: PropTypes.string,
-  header: PropTypes.string,
-  headerTextColor: PropTypes.string,
-  hideSeparator: PropTypes.bool,
-  sectionTintColor: PropTypes.string,
-  separatorInsetLeft: PropTypes.number,
-  separatorInsetRight: PropTypes.number,
-  separatorTintColor: PropTypes.string,
-};
-
-Section.defaultProps = {
-  allowFontScaling: true,
-  children: null,
-  footerComponent: null,
-  headerComponent: null,
-  footer: null,
-  header: null,
-  headerTextColor: '#6d6d72',
-  hideSeparator: false,
-  sectionTintColor: '#EFEFF4',
-  footerTextColor: '#6d6d72',
-  separatorInsetLeft: 15,
-  separatorInsetRight: 0,
-  separatorTintColor: '#c8c7cc',
-};
+// Section.propTypes = {
+//   allowFontScaling: PropTypes.bool,
+//   children: PropTypes.node,
+//   footerComponent: PropTypes.element,
+//   headerComponent: PropTypes.element,
+//   footer: PropTypes.string,
+//   footerTextColor: PropTypes.string,
+//   header: PropTypes.string,
+//   headerTextColor: PropTypes.string,
+//   hideSeparator: PropTypes.bool,
+//   sectionTintColor: PropTypes.string,
+//   separatorInsetLeft: PropTypes.number,
+//   separatorInsetRight: PropTypes.number,
+//   separatorTintColor: PropTypes.string,
+// };
+//
+// Section.defaultProps = {
+//   allowFontScaling: true,
+//   children: null,
+//   footerComponent: null,
+//   headerComponent: null,
+//   footer: null,
+//   header: null,
+//   headerTextColor: '#6d6d72',
+//   hideSeparator: false,
+//   sectionTintColor: '#EFEFF4',
+//   footerTextColor: '#6d6d72',
+//   separatorInsetLeft: 15,
+//   separatorInsetRight: 0,
+//   separatorTintColor: '#c8c7cc',
+// };
 
 export default Section;
